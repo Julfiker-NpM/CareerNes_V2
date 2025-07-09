@@ -1,0 +1,17 @@
+CareerNest/
+├── index.html         (homepage with landing and link to build CV)
+├── create.html        (page for CV form and preview)
+├── templates/
+│   ├── template-modern.html
+│   └── template-biodata.html
+├── css/
+│   ├── style.css
+│   └── bootstrap.min.css
+├── js/
+│   ├── main.js
+│   └── html2pdf.bundle.min.js
+└── assets/
+    ├── fonts/
+    │   └── NotoSansBengali-Regular.ttf
+    └── images/
+        └── logo.png
