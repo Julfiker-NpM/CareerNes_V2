@@ -1,1 +1,9 @@
-/* style.css placeholder */
+body {
+  font-family: Arial, sans-serif;
+}
+
+#cv-preview {
+  background-color: white;
+  padding: 20px;
+  min-height: 200px;
+}
