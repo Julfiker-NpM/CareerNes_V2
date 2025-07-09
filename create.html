@@ -1,1 +1,102 @@
-<!-- create.html placeholder -->
+<!-- create.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CareerNest | Create</title>
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container my-4">
+    <h2>Build Your CV or Bio-data</h2>
+
+    <!-- Language and Template Selectors -->
+    <div class="mb-3">
+      <label>Language:</label>
+      <select id="languageSwitcher" class="form-select w-auto d-inline">
+        <option value="en">English</option>
+        <option value="bn">বাংলা</option>
+      </select>
+
+      <label class="ms-4">Template:</label>
+      <select id="templateSelector" class="form-select w-auto d-inline">
+        <option value="modern">Modern CV</option>
+        <option value="biodata">Bio-data</option>
+      </select>
+    </div>
+
+    <!-- Form -->
+    <form id="cvForm">
+      <div class="mb-2">
+        <label id="labelName">Full Name</label>
+        <input type="text" class="form-control" id="name" required />
+      </div>
+      <div id="bnFields" style="display: none;">
+        <label>পিতার নাম:</label>
+        <input type="text" id="fathersName" class="form-control" />
+      </div>
+      <button type="button" class="btn btn-success mt-2" onclick="generateCV()">Preview</button>
+    </form>
+
+    <!-- CV Preview Area -->
+    <div id="cv-preview" class="mt-4 p-3 border bg-light"></div>
+
+    <button class="btn btn-primary mt-3" onclick="downloadPDF()">Download PDF</button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/html2pdf.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+<!-- create.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CareerNest | Create</title>
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container my-4">
+    <h2>Build Your CV or Bio-data</h2>
+
+    <!-- Language and Template Selectors -->
+    <div class="mb-3">
+      <label>Language:</label>
+      <select id="languageSwitcher" class="form-select w-auto d-inline">
+        <option value="en">English</option>
+        <option value="bn">বাংলা</option>
+      </select>
+
+      <label class="ms-4">Template:</label>
+      <select id="templateSelector" class="form-select w-auto d-inline">
+        <option value="modern">Modern CV</option>
+        <option value="biodata">Bio-data</option>
+      </select>
+    </div>
+
+    <!-- Form -->
+    <form id="cvForm">
+      <div class="mb-2">
+        <label id="labelName">Full Name</label>
+        <input type="text" class="form-control" id="name" required />
+      </div>
+      <div id="bnFields" style="display: none;">
+        <label>পিতার নাম:</label>
+        <input type="text" id="fathersName" class="form-control" />
+      </div>
+      <button type="button" class="btn btn-success mt-2" onclick="generateCV()">Preview</button>
+    </form>
+
+    <!-- CV Preview Area -->
+    <div id="cv-preview" class="mt-4 p-3 border bg-light"></div>
+
+    <button class="btn btn-primary mt-3" onclick="downloadPDF()">Download PDF</button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/html2pdf.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
