@@ -1,6 +1,26 @@
-<!-- template-modern.html -->
-<div>
-  <h2>{{name}}</h2>
-  <p>Email: {{email}}</p>
-  <p>Education, Skills...</p>
+<!-- cv-modern.html -->
+<div class="p-6 text-gray-800 font-sans">
+  <h1 class="text-3xl font-bold mb-1">{{name}}</h1>
+  <p class="mb-4"><strong>Email:</strong> {{email}}</p>
+
+  <h2 class="text-xl font-semibold mt-4">Profile Summary</h2>
+  <p>{{summary}}</p>
+
+  <h2 class="text-xl font-semibold mt-4">Education</h2>
+  <ul class="list-disc list-inside">
+    <li>{{education_1}}</li>
+    <li>{{education_2}}</li>
+  </ul>
+
+  <h2 class="text-xl font-semibold mt-4">Skills</h2>
+  <ul class="flex gap-2 flex-wrap">
+    <li class="bg-gray-200 px-2 py-1 rounded">{{skill_1}}</li>
+    <li class="bg-gray-200 px-2 py-1 rounded">{{skill_2}}</li>
+    <li class="bg-gray-200 px-2 py-1 rounded">{{skill_3}}</li>
+  </ul>
+
+  <h2 class="text-xl font-semibold mt-4">Projects</h2>
+  <ul class="list-disc list-inside">
+    <li>{{project_1}}</li>
+  </ul>
 </div>
