@@ -1,6 +1,20 @@
-<!-- template-biodata.html -->
-<div>
-  <h3 style="text-align:center;">বায়োডাটা</h3>
+<!-- biodata-bangla.html -->
+<div class="p-6 text-black" style="font-family: 'Noto Sans Bengali', sans-serif;">
+  <h2 class="text-2xl font-bold text-center mb-4">বায়োডাটা</h2>
+
   <p><strong>নাম:</strong> {{name}}</p>
-  <p><strong>পিতার নাম:</strong> {{fathersName}}</p>
+  <p><strong>পিতার নাম:</strong> {{father_name}}</p>
+  <p><strong>জন্ম তারিখ:</strong> {{dob}}</p>
+  <p><strong>ইমেইল:</strong> {{email}}</p>
+  <p><strong>স্থায়ী ঠিকানা:</strong> {{address}}</p>
+  <p><strong>জাতীয়তা:</strong> বাংলাদেশী</p>
+
+  <h3 class="mt-4 font-semibold">শিক্ষাগত যোগ্যতা</h3>
+  <ul class="list-disc list-inside">
+    <li>{{education_1_bn}}</li>
+    <li>{{education_2_bn}}</li>
+  </ul>
+
+  <h3 class="mt-4 font-semibold">অতিরিক্ত তথ্য</h3>
+  <p>{{extra_bn}}</p>
 </div>
