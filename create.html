@@ -2,101 +2,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>CareerNest | Create</title>
-  <link href="css/style.css" rel="stylesheet" />
-  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <title>CareerNest | Create CV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- html2pdf CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
-  <div class="container my-4">
-    <h2>Build Your CV or Bio-data</h2>
+<body class="bg-gray-100 font-sans">
 
-    <!-- Language and Template Selectors -->
-    <div class="mb-3">
-      <label>Language:</label>
-      <select id="languageSwitcher" class="form-select w-auto d-inline">
-        <option value="en">English</option>
-        <option value="bn">বাংলা</option>
-      </select>
+  <!-- Header -->
+  <header class="text-center py-4 bg-white shadow">
+    <img src="assets/images/logo.png" alt="CareerNest Logo" class="mx-auto w-20" />
+    <h1 class="text-3xl font-bold text-blue-600">CareerNest</h1>
+    <p class="text-gray-600">Build your CV or Bio-data effortlessly</p>
+  </header>
 
-      <label class="ms-4">Template:</label>
-      <select id="templateSelector" class="form-select w-auto d-inline">
-        <option value="modern">Modern CV</option>
-        <option value="biodata">Bio-data</option>
-      </select>
+  <!-- Container -->
+  <div class="container mx-auto p-4 max-w-5xl bg-white mt-6 shadow rounded">
+
+    <!-- Language and Template Selector -->
+    <div class="flex flex-col sm:flex-row gap-4 mb-6">
+      <div>
+        <label class="font-semibold block mb-1">Select Language</label>
+        <select id="languageSwitcher" class="border px-4 py-2 rounded w-full sm:w-64">
+          <option value="en">English</option>
+          <option value="bn">বাংলা</option>
+        </select>
+      </div>
+      <div>
+        <label class="font-semibold block mb-1">Select Template</label>
+        <select id="templateSelector" class="border px-4 py-2 rounded w-full sm:w-64">
+          <option value="modern">Modern CV</option>
+          <option value="biodata">Bio-data</option>
+        </select>
+      </div>
     </div>
 
     <!-- Form -->
-    <form id="cvForm">
-      <div class="mb-2">
-        <label id="labelName">Full Name</label>
-        <input type="text" class="form-control" id="name" required />
+    <form id="cvForm" class="space-y-4">
+      <div>
+        <label id="labelName" class="block font-semibold mb-1">Full Name</label>
+        <input type="text" id="name" class="w-full border px-4 py-2 rounded" placeholder="Enter your name" required />
       </div>
-      <div id="bnFields" style="display: none;">
-        <label>পিতার নাম:</label>
-        <input type="text" id="fathersName" class="form-control" />
+
+      <div id="bnFields" class="hidden">
+        <label class="block font-semibold mb-1">পিতার নাম</label>
+        <input type="text" id="fathersName" class="w-full border px-4 py-2 rounded" placeholder="পিতার নাম লিখুন" />
       </div>
-      <button type="button" class="btn btn-success mt-2" onclick="generateCV()">Preview</button>
+
+      <div>
+        <label class="block font-semibold mb-1">Email</label>
+        <input type="email" id="email" class="w-full border px-4 py-2 rounded" placeholder="example@email.com" />
+      </div>
+
+      <!-- Add more fields as needed (education, skills, etc.) -->
+
+      <button type="button" onclick="generateCV()" class="bg-blue-600 text-white px-6 py-2 rounded mt-4 hover:bg-blue-700">
+        Preview CV
+      </button>
     </form>
 
-    <!-- CV Preview Area -->
-    <div id="cv-preview" class="mt-4 p-3 border bg-light"></div>
+    <!-- CV Preview -->
+    <div id="cv-preview" class="mt-8 p-4 border rounded bg-white shadow"></div>
 
-    <button class="btn btn-primary mt-3" onclick="downloadPDF()">Download PDF</button>
+    <button onclick="downloadPDF()" class="bg-green-600 text-white px-6 py-2 mt-4 rounded hover:bg-green-700">
+      Download as PDF
+    </button>
   </div>
 
-  <!-- Scripts -->
-  <script src="js/html2pdf.bundle.min.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html>
-<!-- create.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>CareerNest | Create</title>
-  <link href="css/style.css" rel="stylesheet" />
-  <link href="css/bootstrap.min.css" rel="stylesheet" />
-</head>
-<body>
-  <div class="container my-4">
-    <h2>Build Your CV or Bio-data</h2>
-
-    <!-- Language and Template Selectors -->
-    <div class="mb-3">
-      <label>Language:</label>
-      <select id="languageSwitcher" class="form-select w-auto d-inline">
-        <option value="en">English</option>
-        <option value="bn">বাংলা</option>
-      </select>
-
-      <label class="ms-4">Template:</label>
-      <select id="templateSelector" class="form-select w-auto d-inline">
-        <option value="modern">Modern CV</option>
-        <option value="biodata">Bio-data</option>
-      </select>
-    </div>
-
-    <!-- Form -->
-    <form id="cvForm">
-      <div class="mb-2">
-        <label id="labelName">Full Name</label>
-        <input type="text" class="form-control" id="name" required />
-      </div>
-      <div id="bnFields" style="display: none;">
-        <label>পিতার নাম:</label>
-        <input type="text" id="fathersName" class="form-control" />
-      </div>
-      <button type="button" class="btn btn-success mt-2" onclick="generateCV()">Preview</button>
-    </form>
-
-    <!-- CV Preview Area -->
-    <div id="cv-preview" class="mt-4 p-3 border bg-light"></div>
-
-    <button class="btn btn-primary mt-3" onclick="downloadPDF()">Download PDF</button>
-  </div>
-
-  <!-- Scripts -->
-  <script src="js/html2pdf.bundle.min.js"></script>
+  <!-- JS -->
   <script src="js/main.js"></script>
 </body>
 </html>
