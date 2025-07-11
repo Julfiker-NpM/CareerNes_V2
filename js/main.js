@@ -1,3 +1,33 @@
+// main.js
+
+let language = "en";
+let template = "modern";
+
+document.getElementById("languageSwitcher").addEventListener("change", (e) => {
+  language = e.target.value;
+  updateFormLabels();
+});
+
+document.getElementById("templateSelector").addEventListener("change", (e) => {
+  template = e.target.value;
+  updateFormLabels();
+});
+
+// Update form labels based on language/template
+function updateFormLabels() {
+  const labelName = document.getElementById("labelName");
+  const bnFields = document.getElementById("bnFields");
+
+  if (language === "bn" || template === "biodata") {
+    labelName.innerText = "নাম";
+    bnFields.classList.remove("hidden");
+  } else {
+    labelName.innerText = "Full Name";
+    bnFields.classList.add("hidden");
+  }
+}
+
+// Generate CV Preview
 function generateCV() {
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
@@ -67,3 +97,21 @@ function generateCV() {
 
   document.getElementById("cv-preview").innerHTML = html;
 }
+function downloadPDF() {
+  const preview = document.getElementById("cv-preview");
+
+  if (!preview.innerHTML.trim()) {
+    alert("Please generate the CV first.");
+    return;
+  }
+
+  const opt = {
+    margin: 0.5,
+    filename: 'CareerNest_CV.pdf',
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+  };
+
+  html2pdf().set(opt).from(preview).save();
+}
+
