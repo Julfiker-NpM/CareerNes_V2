@@ -1,17 +1,61 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
   <title>CareerNest | Home</title>
-  <link href="css/style.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background: linear-gradient(to right, #eef2f3, #ffffff);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .card {
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      background-color: white;
+    }
+
+    .logo {
+      width: 80px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .btn-primary {
+      padding: 10px 25px;
+      font-size: 1rem;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-  <div class="container text-center mt-5">
-    <img src="assets/images/logo.png" width="100" alt="CareerNest Logo" />
-    <h1>Welcome to CareerNest</h1>
-    <p>Create CV or Bio-data in Bangla or English</p>
-    <a href="create.html" class="btn btn-primary">Start Building</a>
+  <div class="container">
+    <div class="card text-center mx-auto" style="max-width: 500px;">
+      <img src="assets/images/logo.png" alt="CareerNest Logo" class="logo mx-auto" />
+      <h1>Welcome to <span class="text-primary">CareerNest</span></h1>
+      <p>Create CV or Bio-data in Bangla or English</p>
+      <a href="create.html" class="btn btn-primary">Start Building</a>
+    </div>
   </div>
 </body>
 </html>
